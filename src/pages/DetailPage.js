@@ -1,0 +1,204 @@
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addListCartActions } from "../store";
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+
+import ProductItem from "../components/UI/ProductItem";
+import useHttp from "../hooks/use-http";
+import ReactDOM from "react-dom";
+import LiveChatIcon from "../components/UI/LiveChatIcon";
+import LiveChatBox from "./../components/UI/LiveChatBox";
+
+const DetailPage = () => {
+  const isOpenLiveChat = useSelector((state) => state.liveChat.isOpen);
+  const [productDetailData, setProductDetailData] = useState([]);
+  const [relatedProductData, setRelatedProductData] = useState([]);
+  const [number, setNumber] = useState(1);
+
+  const params = useParams();
+  const productId = params.productId;
+  const { sendRequest: fetchProductDetailData } = useHttp();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const transformDataFn = (data) => {
+      let index;
+      const productDetail = data.find((product, i) => {
+        index = i;
+        return product._id.$oid === productId;
+      }); //find trả về 1 obj
+      setProductDetailData(productDetail);
+
+      //loại bỏ productDetail ra khỏi mảng để relatedProduct không chứa productDetail
+      data.splice(index, 1);
+      const relatedProduct = data.filter(
+        (product) => product.category === productDetail.category
+      ); //finter trả về 1 array
+      setRelatedProductData(relatedProduct);
+    };
+
+    fetchProductDetailData(
+      {
+        url: "https://firebasestorage.googleapis.com/v0/b/funix-subtitle.appspot.com/o/Boutique_products.json?alt=media&token=dc67a5ea-e3e0-479e-9eaf-5e01bcd09c74",
+      },
+      transformDataFn
+    );
+  }, [fetchProductDetailData, productId]);
+
+  // console.log(relatedProductData);
+  const navigateToDetailPageHandler = (event) => {
+    window.scrollTo(0, 0);
+    const productId = event.target.dataset.productId;
+    navigate(`/shop/${productId}`);
+  };
+
+  // const data = useSelector((state) => state.listCart.products);
+  // console.log(data);
+
+  const increaseQuantityHandler = (event) => {
+    if (number < 10) setNumber((prevNumber) => prevNumber + 1);
+  };
+
+  const decreaseQuantityHandler = () => {
+    if (number > 1) setNumber((prevNumber) => prevNumber - 1);
+  };
+
+  const addCartHandler = () => {
+    const quantity = number;
+
+    //lấy listCart từ localStorage
+    let listCart = [];
+    const storedListCart = localStorage.getItem("listCart");
+    if (storedListCart) {
+      listCart = JSON.parse(storedListCart);
+    }
+    console.log(listCart);
+
+    const product = {
+      id: productDetailData._id.$oid,
+      name: productDetailData.name,
+      price: productDetailData.price,
+      quantity: quantity,
+      img: productDetailData.img1,
+    };
+
+    //lưu listCart vào store redux
+    dispatch(addListCartActions.addCart(product));
+
+    //lưu listCart vào localstorate
+    listCart.push(product);
+    localStorage.setItem("listCart", JSON.stringify(listCart));
+
+    console.log(product);
+    console.log(listCart);
+    alert("Add to cart successfully!");
+  };
+
+  if (productDetailData.category) {
+    const relatedProductList = relatedProductData.map((product) => {
+      return (
+        <ProductItem
+          key={product._id.$oid}
+          col3={false}
+          list={true}
+          productData={product}
+          onFunctionHandler={navigateToDetailPageHandler}
+        />
+      );
+    });
+
+    return (
+      <div className="detailpage-container mb-5">
+        <div className="maindetail-container row">
+          <div className="col-12 col-md-6">
+            <div className="row mt-5">
+              <div className="col-4 d-flex flex-column">
+                <img
+                  src={productDetailData.img1}
+                  alt={productDetailData.name}
+                  width="50%"
+                  height="30%"
+                />
+                <img
+                  src={productDetailData.img2}
+                  alt={productDetailData.name}
+                  width="50%"
+                  height="30%"
+                />
+                <img
+                  src={productDetailData.img3}
+                  alt={productDetailData.name}
+                  width="50%"
+                  height="30%"
+                />
+                <img
+                  src={productDetailData.img4}
+                  alt={productDetailData.name}
+                  width="50%"
+                  height="30%"
+                />
+              </div>
+              <div className="col-8">
+                <img
+                  src={productDetailData.img1}
+                  alt={productDetailData.name}
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-6 mt-5">
+            <h2>{productDetailData.name}</h2>
+            <h4 className="my-4">{`${productDetailData.price
+              .toString()
+              .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")} VND`}</h4>
+            <p>{productDetailData.short_desc}</p>
+            <h5 className="my-3">
+              CATEGORY:
+              <span className="ms-2">{productDetailData.category}</span>
+            </h5>
+            <div className="add-container d-sm-flex ">
+              <div className="quantity d-flex justify-content-between ">
+                <h5 className="m-0 me-2 align-self-center">QUANTITY</h5>
+                {/* <input type="number" min={0} ref={inputRef} /> */}
+                <div className="align-self-center">
+                  <AiFillCaretLeft
+                    data-id={productDetailData._id.$oid}
+                    onClick={decreaseQuantityHandler}
+                  />
+                  <span className="quantity-container mx-2">{number}</span>
+                  <AiFillCaretRight
+                    data-id={productDetailData._id.$oid}
+                    onClick={increaseQuantityHandler}
+                  />
+                </div>
+              </div>
+              <button type="button" onClick={addCartHandler}>
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="description-container mt-5">
+          <h3>PRODUCT DESCRIPTION</h3>
+          <pre>{productDetailData.long_desc}</pre>
+        </div>
+
+        <div className="related-container clearfix">{relatedProductList}</div>
+        <LiveChatIcon />
+        {isOpenLiveChat &&
+          ReactDOM.createPortal(
+            <LiveChatBox />,
+            document.getElementById("popup-root")
+          )}
+      </div>
+    );
+  }
+
+  return <h5>Loading...</h5>;
+};
+export default DetailPage;

@@ -1,0 +1,931 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  font-style: italic;
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.card {
+  text-align: center;
+  max-width: 80vw;
+  margin: auto;
+  border: none;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1rem;
+  color: rgb(103, 103, 103);
+}
+
+h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 0.85rem;
+  color: rgb(103, 103, 103);
+}
+
+p {
+  font-size: 0.9rem;
+  color: rgb(103, 103, 103);
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #fff;
+}
+/* CSS CHO NavBar */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.navbar-container {
+  /* height: 10vh; */
+  /* font-style: italic; */
+  font-weight: 600;
+}
+.navbar-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar-container li {
+  float: left;
+}
+
+.navlink {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.navlink:hover {
+  color: rgb(233, 188, 103);
+  cursor: pointer;
+}
+
+/* .logout {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #333;
+} */
+
+.active.navlink {
+  color: rgba(224, 146, 0, 0.963);
+}
+
+.navbar-container .brand-name {
+  font-size: 1.6rem;
+}
+
+/* CSS CHO Footer  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.footer-container {
+  font-size: 0.8rem;
+  background-color: #111;
+  margin-top: 1rem;
+}
+
+.list-item {
+  max-width: 80vw;
+  margin: auto;
+  padding: 3rem 0;
+  color: #fff;
+}
+
+.list-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item-link {
+  text-decoration: none;
+  color: #555;
+}
+
+/* .list-item h3 {
+  font-size: 1.2rem;
+} */
+/* .navlink {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #333;
+} */
+
+/* CSS CHO Banner  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.banner-container {
+  width: 100%;
+  height: 45vh;
+  background-image: url("../public/images/banner1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  top: 0%;
+  left: 0%;
+}
+
+.banner-info {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+.banner-info button {
+  border: none;
+  padding: 8px 30px;
+  background-color: rgb(71, 69, 69);
+  color: #fff;
+}
+
+.banner-info button:hover {
+  /* cursor: pointer; */
+  background-color: rgb(31, 31, 31);
+  font-weight: 600;
+}
+
+/* CSS CHO Collections  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.collections-container {
+  margin-top: 4rem;
+}
+
+.collection-img {
+  /* width: 25rem; */
+  max-height: 16rem;
+}
+
+.collections-title h2 {
+  font-weight: 600;
+}
+
+.collections-container img:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+/* CSS CHO TrendingProducts  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.trending-container {
+  margin-top: 4rem;
+}
+
+.trending-title {
+  text-align: left;
+}
+
+/* CSS CHO ProductItem  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.animations {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+
+.img-product:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* CSS CHO OtherInfo  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.other-container {
+  margin-top: 2rem;
+}
+
+.promotion-container {
+  padding: 8vh 0;
+  background-color: rgb(245, 245, 245);
+}
+
+.promotion-container h6 {
+  margin-bottom: 0;
+}
+
+.email-container {
+  margin: 3rem 0;
+  text-align: left;
+}
+
+.input-container {
+  min-width: 40vw;
+}
+
+.input-container input {
+  /* min-width: 10vw; */
+  height: 3rem;
+  border: solid 1px rgb(202, 202, 202);
+  font-size: 0.9rem;
+  padding-left: 1rem;
+}
+
+.input-container button {
+  height: 3rem;
+  /* min-width: 7rem; */
+  border: none;
+  background-color: rgb(71, 69, 69);
+  color: #fff;
+}
+
+.input-container button:hover {
+  background-color: rgb(31, 31, 31);
+  font-weight: 600;
+}
+
+/* CSS CHO Backdrop  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.backdrop-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* CSS CHO Popup  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65vw;
+  height: 65vh;
+  z-index: 100;
+  overflow: hidden;
+  background-color: white;
+}
+
+.content-container {
+  width: 90%;
+  /* min-height: 90%; */
+  /* overflow: none; */
+  /* overflow-y: auto; */
+}
+
+.shortdescrip-container {
+  max-height: 16rem;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+/* .content-container p {
+  overflow-y: auto;
+} */
+
+.img-detail {
+  width: 100%;
+  height: 100%;
+}
+
+.close-icon:hover {
+  cursor: pointer;
+}
+
+.content-container button {
+  border: none;
+  padding: 0.4rem 1.5rem;
+  background-color: rgb(71, 69, 69);
+}
+
+.content-container button:hover {
+  background-color: rgb(31, 31, 31);
+  font-weight: 600;
+}
+
+/* CSS CHO ShopPage  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.brand-container {
+  padding: 8vh 0;
+  background-color: rgb(245, 245, 245);
+  margin-bottom: 2.5rem;
+}
+
+/* CSS CHO ProductList  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.productlist-container {
+  text-align: left;
+}
+
+.categories-title ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  /* text-align: left; */
+}
+
+.categories-title h4 {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 0;
+  color: black;
+  font-weight: 600;
+}
+
+.categories-title li {
+  font-size: 0.9rem;
+  padding: 0.3rem 0 0.3rem 1.5rem;
+  margin: 0;
+  background-color: rgb(250, 250, 250);
+}
+.categories-title li:first-child {
+  padding-top: 0.8rem;
+}
+
+.categories-title li:hover {
+  color: rgba(224, 146, 0, 0.963);
+}
+.categories-title h4 {
+  background-color: rgb(221, 221, 221);
+}
+
+.categories-title h4:first-child {
+  color: #fff;
+  background-color: #111;
+}
+
+.products-container input {
+  height: 3rem;
+  width: 15rem;
+  border: solid 1px rgb(202, 202, 202);
+  font-size: 0.9rem;
+  padding-left: 1rem;
+}
+
+.products-container select {
+  height: 2rem;
+}
+/* CSS CHO Detail Page  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.detailpage-container {
+  text-align: left;
+}
+
+.detailpage-container img {
+  margin: auto;
+  padding-bottom: 0.3rem;
+}
+
+.list {
+  max-width: 15rem;
+  max-height: 25rem;
+}
+
+.maindetail-container span {
+  color: rgb(103, 103, 103);
+}
+
+.add-container h5 {
+  color: rgb(103, 103, 103);
+}
+.quantity {
+  padding: 0.4rem 1rem;
+  border: solid 1px rgb(192, 192, 192);
+  width: 100%;
+}
+.add-container button {
+  border: none;
+  padding: 8px 30px;
+  background-color: rgb(71, 69, 69);
+  color: #fff;
+  width: 50%;
+}
+
+.add-container button:hover {
+  /* cursor: pointer; */
+  background-color: rgb(31, 31, 31);
+  font-weight: 600;
+}
+
+.description-container pre {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  overflow: hidden;
+  white-space: pre-wrap;
+  line-height: 1rem;
+  /* width: 100%; */
+}
+
+/* CSS CHO Login va Register  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.loginpage-container {
+  width: 100%;
+  height: 105vh;
+  background-image: url("../public/images/banner1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  color: rgb(103, 103, 103);
+}
+
+.signup-container {
+  width: 50%;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-group {
+  text-align: left;
+  border: solid 1px rgb(192, 192, 192);
+  border-bottom: none;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 1rem 1rem;
+}
+
+.form-group.last-group {
+  border-bottom: solid 1px rgb(192, 192, 192);
+}
+
+.form-group input {
+  border: none;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+.button-container {
+  margin: 0 2rem;
+}
+.form-inner button:disabled {
+  background-color: rgb(180, 180, 180);
+  color: rgb(80, 80, 80);
+  font-weight: 500;
+}
+.form-inner button {
+  /* cursor: pointer; */
+  background-color: rgb(31, 31, 31);
+  color: #fff;
+  font-weight: 600;
+}
+
+.click-link {
+  text-decoration: none;
+}
+
+.invalid input {
+  border: 1px solid #b40e0e;
+  background-color: #fddddd;
+}
+
+.invalid input:focus {
+  border-color: #ff8800;
+  background-color: #fbe8d2;
+}
+
+.text-error {
+  color: rgb(170, 14, 14);
+}
+
+/* CSS CHO CartPage  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.cartpage-container {
+  min-height: 60vh;
+}
+.shoppingcart-container thead {
+  background-color: rgb(245, 245, 245);
+}
+
+.shoppingcart-container thead tr th {
+  padding: 1rem;
+}
+
+.quantity-container {
+  font-style: normal;
+}
+
+.shoppingcart-container .button-container {
+  margin: 0;
+  background-color: rgb(245, 245, 245);
+  padding: 1rem 0;
+}
+
+.button-container .shopping-btn {
+  border: none;
+  padding: 0;
+  background-color: rgb(245, 245, 245);
+}
+
+.button-container .shopping-btn:hover {
+  font-weight: 600;
+}
+.button-container .checkout-btn {
+  background-color: rgb(245, 245, 245);
+  padding: 0.3rem 0.6rem;
+}
+
+.button-container .checkout-btn:hover {
+  background-color: rgb(31, 31, 31);
+  font-weight: 600;
+  color: white;
+}
+.cart-total .box {
+  background-color: rgb(245, 245, 245);
+  padding: 2rem;
+}
+
+.cart-total .subtotal {
+  border-bottom: solid 2px rgb(156, 156, 156);
+}
+
+.coupon-box input {
+  padding: 0.3rem;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.coupon-box button {
+  width: 100%;
+  border: none;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  background-color: rgb(71, 69, 69);
+  color: #fff;
+}
+
+.coupon-box button:hover {
+  background-color: rgb(31, 31, 31);
+  font-weight: 600;
+}
+
+/* CSS CHO CheckoutPage  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.price-box {
+  background-color: rgb(245, 245, 245);
+  padding: 2rem;
+}
+
+.item-container {
+  border-bottom: solid 2px rgb(156, 156, 156);
+}
+.item-name {
+  font-weight: 600;
+  color: black;
+}
+
+.form-gr input {
+  border: solid 1px rgb(188, 188, 188);
+  font-size: 0.9rem;
+  color: rgb(103, 103, 103);
+}
+
+.form-gr button {
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  background-color: rgb(71, 69, 69);
+  color: #fff;
+  font-weight: 500;
+}
+
+.form-gr button:hover {
+  background-color: rgb(31, 31, 31);
+  font-weight: 600;
+}
+
+/* CSS CHO LiveChatIcon va LiveChatBox  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.chaticon {
+  font-size: 3rem;
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+  color: rgb(0, 136, 255);
+}
+
+.chaticon:hover {
+  cursor: pointer;
+}
+
+.chatbox-container {
+  width: 30vw;
+  position: fixed;
+  bottom: 20%;
+  right: 6%;
+  z-index: 100;
+  /* padding: 1.5rem; */
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.chatbox-header {
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  border-bottom: solid 2px rgb(230, 230, 230);
+}
+.chatbox-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: normal;
+  color: #111;
+}
+
+.chatbox-header button {
+  border: none;
+  padding: 0.2rem 0.5rem;
+  background-color: rgb(220, 220, 220);
+  font-size: 0.85rem;
+  color: rgb(110, 110, 110);
+}
+
+.chatbox-body {
+  margin: 0.5rem 1.5rem 0.5rem 0.5rem;
+  height: 40vh;
+}
+
+.chatbox-body .user-chat {
+  text-align: right;
+}
+.chatbox-body .user-chat span {
+  background-color: rgb(3, 167, 232);
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+}
+.chatbox-body .admin-chat {
+  margin-bottom: 0.7rem;
+}
+.chatbox-body .admin-chat span {
+  background-color: rgb(240, 240, 240);
+  color: rgb(110, 110, 110);
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+}
+
+.admin-chat.long {
+  width: 80%;
+  background-color: rgb(240, 240, 240);
+  color: rgb(110, 110, 110);
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+}
+
+.chatbox-footer {
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  border-top: solid 2px rgb(230, 230, 230);
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 20px 20px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* RESPONSIVE TOÀN TRANG WEB  */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1200px) {
+  .chatbox-container {
+    width: 40vw;
+    position: fixed;
+    bottom: 20%;
+    right: 6%;
+    z-index: 100;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .cart-total .box {
+    padding: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .signup-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .navbar-container .brand-name {
+    font-size: 1.3rem;
+    padding: 0;
+  }
+  .navlink {
+    padding: 10px 12px;
+  }
+
+  .navbar-container {
+    padding: 1rem 0;
+  }
+
+  .popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+    height: 75vh;
+    z-index: 100;
+    overflow: hidden;
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .chatbox-footer input {
+    max-width: 10rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    z-index: 100;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .shortdescrip-container {
+    max-height: 10rem;
+  }
+  .img-detail-container {
+    text-align: center;
+  }
+  .img-detail {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .navbar-container {
+    margin: 0 1rem;
+  }
+  .homepage-container {
+    margin: 0 1rem;
+  }
+  .detailpage-container {
+    margin: 0 1rem;
+  }
+
+  .shoppage-container {
+    margin: 0 1rem;
+  }
+  .cartpage-container {
+    margin: 0 1rem;
+  }
+  .checkout-container {
+    margin: 0 1rem;
+  }
+  .loginpage-container {
+    background-image: none;
+  }
+
+  .signup-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .form-group {
+    border: none;
+    padding: 0.5rem;
+  }
+  .form-group input {
+    border: solid 1px #555;
+  }
+  .form-group.last-group {
+    border-bottom: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    overflow: hidden;
+    background-color: white;
+  }
+  .shortdescrip-container {
+    max-height: 15rem;
+  }
+  .img-product.card-img-top {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .link-cursor.collection-img {
+    padding: 0 0.2rem;
+  }
+
+  .add-container button {
+    width: 100%;
+  }
+}
