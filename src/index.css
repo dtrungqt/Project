@@ -1,0 +1,377 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* CSS CHO NarBar  */
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+.navbar-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.color-black {
+  background-color: #000;
+}
+
+.animation-appear {
+  animation-name: colorBlack;
+  animation-duration: 1s;
+}
+
+@keyframes colorBlack {
+  from {
+    background-color: rgb(0, 0, 0, 0);
+  }
+  to {
+    background-color: #000;
+  }
+}
+
+.color-transparent {
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.animation-disappear {
+  animation-name: colorTransparent;
+  animation-duration: 1s;
+}
+
+@keyframes colorTransparent {
+  from {
+    background-color: #000;
+  }
+  to {
+    background-color: rgb(0, 0, 0, 0);
+  }
+}
+.navbar-container .app-name {
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+.navbar-container .search-icon {
+  cursor: pointer;
+}
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/* CSS CHO Banner  */
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/* css cho background cua banner o chinh giua và responsive  */
+.banner-container.background-center {
+  background-color: #000;
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.banner-info {
+  position: absolute;
+  top: 35%;
+  font-weight: 500;
+  margin-left: 3rem;
+}
+.banner-info-box {
+  width: 35vw;
+  /* margin-left: 3rem; */
+}
+/* CSS overflow paragraph  */
+.banner-overview {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.banner-container .banner-info button {
+  font-weight: 500;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(129, 129, 129, 0.5);
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.banner-container .banner-info button:hover {
+  color: rgb(239, 239, 239);
+  background-color: rgba(220, 220, 220, 0.5);
+}
+
+.banner-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  width: 50vw;
+}
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/* CSS CHO movielList  */
+/*-------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+.movie-container {
+  padding-top: 1.5rem;
+  padding-bottom: 2.2rem;
+}
+
+.movieList-container {
+  background-color: #000;
+}
+
+/* CSS cho movieItem  */
+/*------------------------------------------------------------*/
+.movieItem-scroll-container {
+  /* hiển thị theo chiều ngang */
+  overflow: auto;
+  white-space: nowrap;
+  margin: 0px 3rem;
+}
+
+.movieItem-box-container {
+  padding-left: 2rem;
+  /* background-color: #000; */
+}
+
+/* css thanh scrollbar  */
+/* width */
+::-webkit-scrollbar {
+  height: 1vh;
+}
+
+/* Track - thanh chứa scroll */
+::-webkit-scrollbar-track {
+  background: #3f3f3f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(169, 169, 169);
+  border-radius: 5px;
+  width: 10vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(90, 90, 90);
+}
+
+.poster {
+  width: 9vw;
+  height: 30vh;
+}
+
+.backdrop {
+  width: 15vw;
+  height: 15vh;
+}
+
+.transition {
+  transition: transform 0.5s;
+}
+
+.transition:hover {
+  transform: scale(1.1, 1.1);
+}
+/*------------------------------------------------------------*/
+
+.movieItem-title {
+  font-size: 1.2rem;
+  color: #fff;
+}
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/* CSS cho MovieDetail  */
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+.movieDetail-container {
+  width: 100%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.movieTrailer-backdrop {
+  width: 100%;
+  height: 100%;
+}
+
+.movieInfo-container {
+  color: white;
+}
+
+.movieInfo-overview {
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.movieInfo-container .white-line {
+  background-color: #fff;
+  border: none;
+  height: 1.5px;
+  opacity: 1;
+}
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/* RESPONSIVE  */
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+@media only screen and (max-width: 992px) {
+  .banner-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .banner-info {
+    top: 30%;
+  }
+
+  .poster {
+    width: 10vw;
+    height: 20vh;
+  }
+  .backdrop {
+    width: 15vw;
+    height: 12vh;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .banner-info {
+    margin: 1rem;
+  }
+  .banner-info-box {
+    width: 90vw;
+  }
+
+  .banner-overview {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .poster {
+    width: 15vw;
+    height: 20vh;
+  }
+
+  .backdrop {
+    width: 20vw;
+    height: 10vh;
+  }
+  .movieItem-container {
+    /* hiển thị theo chiều ngang */
+    margin: 0px 1rem;
+  }
+}
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/* CSS cho SearchForm  */
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+.searchForm-container {
+  background-color: #000;
+  height: 50vh;
+}
+
+.searchForm-form {
+  background-color: #fff;
+  width: 60%;
+  height: 10rem;
+}
+
+.searchForm-input {
+  width: 80%;
+  border: none;
+  height: 3rem;
+  padding-left: 3vw;
+  font-size: 1.3rem;
+}
+
+.searchForm-input:focus {
+  outline: none;
+}
+.search-icon {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  color: rgb(204, 204, 204);
+}
+
+.searchForm-line {
+  opacity: 1;
+  border: none;
+  height: 3px;
+  background-color: #0dcaf0;
+}
+
+.button-container .button {
+  border: none;
+  background-color: #fff;
+  font-weight: 500;
+  width: 7rem;
+  padding: 0.4rem 0rem;
+  /* padding: 0.4rem 1.2rem; */
+}
+
+.search-btn.button {
+  background-color: #0dcaf0;
+  color: white;
+  margin-right: 2rem;
+  border: none;
+}
+
+.search-btn.button:hover {
+  background-color: #0098cf;
+}
+.reset-btn.button {
+  color: #555;
+}
+
+.reset-btn.button:hover {
+  background-color: rgb(221, 221, 221);
+}
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/* CSS cho SearchResult  */
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+.searchPage-container {
+  background-color: #000;
+  min-height: 100vh;
+}
+
+.resultList-title {
+  color: white;
+  margin-left: 1.5rem;
+  font-size: 1.6rem;
+}
